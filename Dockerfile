@@ -27,7 +27,7 @@ COPY Src ./Src
 RUN dotnet publish ./Src/DDD.Services.Api/DDD.Services.Api.csproj -c Release -o /publish
 
 # ASP.NET Core Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 COPY --from=build /publish ./
 
